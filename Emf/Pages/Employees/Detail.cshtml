@@ -1,0 +1,26 @@
+﻿@page "{id:int}"
+
+@model Emf.Pages.Employees.DetailModel
+@{
+    ViewData["title"] = "Detail";
+}
+@if (Model.Message != null)
+{
+    //Todo: Make message disappear after a couple of seconds or have x button to close.
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<h2>@Model.Employee.FirstName @Model.Employee.LastName</h2>
+<div>First Name: @Model.Employee.FirstName</div>
+<div>Last Name: @Model.Employee.LastName</div>
+<div>Address 1: @Model.Employee.Address1</div>
+<div>Address 2: @Model.Employee.Address2</div>
+<div>City: @Model.Employee.City</div>
+<div>State: @Model.Employee.State</div>
+<div>Zipcode: @Model.Employee.Zipcode</div>
+<div>Phone: @Model.Employee.Phone</div>
+<div>Email: @Model.Employee.Email</div>
+<div>Department: @Model.Employee.Department.Name</div>
+
+<br />
+<a class="btn btn-default" btn asp-page="./List">View All Employees</a>

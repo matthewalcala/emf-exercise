@@ -1,0 +1,13 @@
+﻿@page "{id:int}"
+@model Emf.Pages.Departments.DeleteModel
+
+@{
+    ViewData["title"] = "Delete Confirmation";
+}
+
+<h2>Delete Confirmation</h2>
+<div class="alert alert-danger">Are you sure you want to delete @Model.Department.Name?</div>
+<form method="post">
+    <button class="btn btn-success">Yes</button>
+    <a asp-page="List" class="btn btn-default">Cancel</a>
+</form>

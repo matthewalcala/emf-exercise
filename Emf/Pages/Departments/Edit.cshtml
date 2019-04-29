@@ -1,0 +1,29 @@
+﻿@page "{id:int?}"
+@model Emf.Pages.Departments.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editing @Model.Department.Name</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Department.Id" />
+    <div class="form-group">
+        <label asp-for="Department.Name"></label>
+        <input asp-for="Department.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Department.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Department.Description"></label>
+        <input asp-for="Department.Description" class="form-control" />
+        <span class="text-danger" asp-validation-for="Department.Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Department.DepartmentType"></label>
+        <select asp-for="Department.DepartmentType" asp-items="Model.DepartmentTypes" class="form-control">
+            <option></option>
+        </select>
+        <span class="text-danger" asp-validation-for="Department.DepartmentType"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,65 @@
+﻿@page "{id:int?}"
+@model Emf.Pages.Employees.EditModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>@Model.Employee.FirstName @Model.Employee.LastName</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Employee.Id" />
+    <div class="form-group">
+        <label asp-for="Employee.FirstName"></label>
+        <input asp-for="Employee.FirstName" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.LastName"></label>
+        <input asp-for="Employee.LastName" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.LastName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.Address1"></label>
+        <input asp-for="Employee.Address1" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.Address1"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.Address2"></label>
+        <input asp-for="Employee.Address2" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.Address2"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.City"></label>
+        <input asp-for="Employee.City" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.City"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.State"></label>
+        <input asp-for="Employee.State" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.State"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.Zipcode"></label>
+        <input asp-for="Employee.Zipcode" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.Zipcode"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.Phone"></label>
+        <input asp-for="Employee.Phone" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.Phone"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.Email"></label>
+        <input asp-for="Employee.Email" class="form-control" />
+        <span class="text-danger" asp-validation-for="Employee.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Employee.Department"></label>
+        <select asp-for="Employee.DepartmentId"
+                asp-items="@(new SelectList(Model.Departments,"Id","Name"))" class="form-control">
+            <option>Please select one</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

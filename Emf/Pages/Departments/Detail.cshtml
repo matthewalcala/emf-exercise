@@ -1,0 +1,18 @@
+﻿@page "{id:int}"
+
+@model Emf.Pages.Departments.DetailModel
+@{
+    ViewData["title"] = "Detail";
+}
+@if (Model.Message != null)
+{
+    //Todo: Make message disappear after a couple of seconds or have x button to close.
+    <div class="alert alert-info">@Model.Message</div>
+}
+
+<h2>@Model.Department.Name</h2>
+
+<div>Location: @Model.Department.Description</div>
+<div>Department Type: @Model.Department.DepartmentType</div>
+<br />
+<a class="btn btn-default" asp-page="./List">View All Departments</a>
